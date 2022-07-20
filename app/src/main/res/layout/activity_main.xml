@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+         <variable
+             name="type"
+             type="android.graphics.Typeface" />
+        <variable
+            name="info"
+            type="com.kd.appglyzh.Info"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="256px"
+        android:layout_height="128px"
+        android:background="#000"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="勾蓝瑶寨大气负氧离子监测站"
+            android:textColor="#f00"
+            setExtraTypeface="@{type}"
+            android:textSize="19px" />
+
+        <TextView
+            setExtraTypeface="@{type}"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="5px"
+            android:text="@{`温度:`+info.wdu+` 湿度:`+info.sdu}"
+            android:textColor="#f00"
+            android:textSize="22px" />
+
+
+        <TextView
+            setExtraTypeface="@{type}"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="5px"
+            android:text="@{`负氧离子:`+info.ndu}"
+            android:textColor="#f00"
+            android:textSize="22px" />
+
+    </LinearLayout>
+</layout>
